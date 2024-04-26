@@ -1,22 +1,91 @@
+body{
+    margin: 0;
+
+}
+
 .wrapper{
+    width: 100vw;
+    height: 100vh;
     display: grid;
+    grid-template-columns: 1fr;
     grid-template-areas: 
     "header"
-    "nav"
     "main"
     "footer";
-    grid-template-columns: 1fr;
+
 }
 
 header{
     grid-area: header;
     padding: 0;
-    margin: 0;    
+    margin: 0;   
+    text-align: center;
+    background-color: skyblue;
+    padding: 1vh;
+    border-bottom: solid black;
+    height: 12vh;
+    max-height: 10vw;
 }
 
-nav{
-    grid-area: nav;
+h1{
+    font-size: 3vw;
+    margin: 5px;
+    font-family: arial;
+}
+
+
+
+nav > ul{
     display: grid;
-    grid-template-areas: 
-
+    grid-template-columns: 1fr 1fr;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
+
+nav > ul > li{
+    border: solid black;
+    font-size: 1vw;
+    width: 48vw;
+    margin: auto;
+}
+
+nav > ul > li > a{
+    display: block;
+    padding: 0.3vh;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+    font-weight: 800;
+    font-family: arial;
+}
+
+a:visited{
+    color: black;
+}
+
+a:hover{
+    background-color: lightgrey;
+}
+
+main{
+    background-color: beige;
+    height: 80vh;
+    
+}
+
+footer{
+    background-color: skyblue;
+    height: 5vh;
+    text-align: center;
+    border-top: solid black;
+}
+
+#index > .wrapper > main{
+    background-image: url("/IMG/worldMap.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
