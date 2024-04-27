@@ -96,7 +96,7 @@ footer{
 }
 
 #index > .wrapper > main{
-    background-image: url("/IMG/worldMap.jpg");
+    background-image: url("../IMG/worldMap.jpg");
     background-size: cover;
     background-position: center;
     display:grid;
@@ -140,7 +140,7 @@ footer{
 }
 
 #music > .wrapper > main{
-    background-image: url("/IMG/worldMap.jpg");
+    background-image: url("../IMG/worldMap.jpg");
     background-size: cover;
     background-position: center;
 
