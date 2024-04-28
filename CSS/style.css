@@ -107,11 +107,15 @@ footer{
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.9);
     width: 85vw;
+    height: min-content;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     text-align: center;
     margin: auto;
 }
 
-.headline{
+.wrapper > main > section > p:nth-child(1), .wrapper > main > a > section >p:nth-child(1) {
     font-weight:bold;
     font-size: 125%;
     font-family: Arial,'Times New Roman';
@@ -119,19 +123,19 @@ footer{
 
 #music > .wrapper > main{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-areas:
-        "topleft" "topright"
-        "cenleft" "cenright"
-        "botleft" "botright";
+    grid-template-columns: none;
+
+    background-image: url("../IMG/worldMap.jpg");
+    background-size: cover;
+    background-position: center;
+
 }
 
 #music > .wrapper > main > a{
     border: solid black;
     border-radius: 7px;
-    width: 85%;
-    height: 85%;
+    width: 90%;
+    height: 90%;
     margin: auto;
     text-decoration: none;
     text-align: center;
@@ -139,21 +143,109 @@ footer{
     font-size: 2vh;
 }
 
-#music > .wrapper > main{
-    background-image: url("../IMG/worldMap.jpg");
+#music > .wrapper > main > a:hover{
+    background-color:lightgray
+}
+
+#africa > .wrapper > main{
+    background-image: url("../IMG/africaCulture2.jpg");
     background-size: cover;
     background-position: center;
 
 }
 
-#music > .wrapper > main > a:hover{
-    background-color:lightgray
+#asia > .wrapper > main{
+    background-image: url("../IMG/asiaCulture.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: white;
 }
 
-@media (max-width: 500px){
-    #music > .wrapper > main > a{
-        font-size: 1.3vh;
-        max-width: 100%;
+#europe > .wrapper > main{
+    background-image: url("../IMG/europeanCulture3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+}
+
+#northAmerica > .wrapper > main{
+    background-image: url("../IMG/northAmericanCulture.png");
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+}
+
+#oceania > .wrapper > main{
+    background-image: url("../IMG/oceanianCulture2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+}
+
+#southAmerica > .wrapper > main{
+    background-image: url("../IMG/southAmericaCulture.png");
+    background-size: cover;
+    background-position: center;
+    background-color: white;
+}
+
+.musicContent{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.musicContent > section{
+    border: solid black;
+    border-radius: 7px;
+    width: 90%;
+    min-height: 70%;
+    height: min-content;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 7fr;
+    grid-template-areas: 
+        "sideContent mainContent";
+}
+
+.musicContent > section > article{
+    grid-area: mainContent;
+    margin: 0;
+}
+
+.musicContent > section > article > p{
+    margin: 0;
+}
+
+.musicContent > section > article > p:nth-child(1){
+    font-size: 125%;
+    font-weight: bold;
+    font-family: Arial,'Times New Roman';
+}
+
+@media screen and (min-width: 630px){
+    #music > .wrapper > main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+
+    }
+
+    .musicContent{
+        display:grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .musicContent > section{
+        margin: auto;
     }
 
 }
