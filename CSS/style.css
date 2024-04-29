@@ -12,6 +12,7 @@ p{
 .wrapper{
     max-width: 100vw;
     height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: min-content min-content min-content;
@@ -20,6 +21,12 @@ p{
     "main"
     "footer";
 
+}
+
+main{
+    grid-area: main;
+    min-height: 600px;
+    
 }
 
 header{
@@ -127,6 +134,7 @@ footer{
     margin: auto;
     margin-bottom: 6px;
     margin-top: 6px;
+    
 }
 
 .wrapper > main > section > p:nth-child(1), .wrapper > main > a > section >p:nth-child(1) {
@@ -163,46 +171,42 @@ footer{
     background-color:lightgray
 }
 
-#africa > .wrapper > main{
-    background-image: url("../IMG/africaCulture2.jpg");
+#africa > .wrapper > main,
+#asia > .wrapper > main,
+#europe > .wrapper > main,
+#northAmerica > .wrapper > main,
+#oceania > .wrapper > main,
+#southAmerica > .wrapper > main{
     background-size: cover;
     background-position: center;
+    background-color: white;
+}
+/*----------*/
+
+#africa > .wrapper > main{
+    background-image: url("../IMG/africaCulture2.jpg");
 
 }
 
 #asia > .wrapper > main{
     background-image: url("../IMG/asiaCulture.jpg");
-    background-size: cover;
-    background-position: center;
-    background-color: white;
+
 }
 
 #europe > .wrapper > main{
     background-image: url("../IMG/europeanCulture3.jpg");
-    background-size: cover;
-    background-position: center;
-    background-color: white;
 }
 
 #northAmerica > .wrapper > main{
     background-image: url("../IMG/northAmericanCulture.png");
-    background-size: cover;
-    background-position: center;
-    background-color: white;
 }
 
 #oceania > .wrapper > main{
     background-image: url("../IMG/oceanianCulture2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-color: white;
 }
 
 #southAmerica > .wrapper > main{
     background-image: url("../IMG/southAmericaCulture.png");
-    background-size: cover;
-    background-position: center;
-    background-color: white;
 }
 
 .musicContent{
@@ -218,7 +222,6 @@ footer{
     width: 90%;
     min-height: 60%;
     height: min-content;
-    padding: auto;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -251,7 +254,7 @@ p{
     font-family: Arial,'Times New Roman';
 }
 
-@media screen and (min-width: 650px){
+@media all and (min-width: 650px){
 
     #index > .wrapper > main > section{
         min-height: 50%;
@@ -286,8 +289,6 @@ p{
     #music > .wrapper > main > a{
         margin: auto;
     }
-
-
 }
 
 
