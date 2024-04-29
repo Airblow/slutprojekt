@@ -11,6 +11,7 @@ p{
 .wrapper{
     max-width: 100vw;
     height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: min-content min-content min-content;
@@ -87,7 +88,7 @@ a:hover{
 
 main{
     grid-area: main;
-    min-height: 900px;
+    min-height: 90vh;
     
 }
 
@@ -240,7 +241,7 @@ p{
     font-family: Arial,'Times New Roman';
 }
 
-@media screen and (min-width: 650px){
+@media all and (min-width: 650px){
 
     #index > .wrapper > main > section{
         min-height: 50%;
