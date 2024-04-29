@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-size: 1em;
+    
 }
 
 p{
@@ -46,6 +47,7 @@ h1{
     font-size: 50px;
     margin: auto;
     font-family: Arial,'Times New Roman';
+    width: min-content;
 }
 
 
@@ -70,9 +72,12 @@ nav > ul > li > a{
     display: block;
     padding: 10px;
     background-color: white;
-    text-decoration: none;
     color: black;
     transition: color 0.3s;
+}
+
+a{
+    text-decoration: none;
     font-weight: bold;
     font-family: Arial,'Times New Roman';
 }
@@ -83,6 +88,12 @@ a:visited{
 
 a:hover{
     background-color: lightgrey;
+}
+
+header > a:hover{
+    width: min-content;
+    margin : auto;
+    border-radius: 7px;
 }
 
 main{
