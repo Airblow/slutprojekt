@@ -22,6 +22,12 @@ p{
 
 }
 
+main{
+    grid-area: main;
+    min-height: 600px;
+    
+}
+
 header{
     grid-area: header;
     padding: 0;
@@ -86,12 +92,6 @@ a:hover{
     background-color: lightgrey;
 }
 
-main{
-    grid-area: main;
-    min-height: 600px;
-    
-}
-
 footer{
     grid-area: footer;
     background-color: skyblue;
@@ -154,46 +154,42 @@ footer{
     background-color:lightgray
 }
 
-#africa > .wrapper > main{
-    background-image: url("../IMG/africaCulture2.jpg");
+#africa > .wrapper > main,
+#asia > .wrapper > main,
+#europe > .wrapper > main,
+#northAmerica > .wrapper > main,
+#oceania > .wrapper > main,
+#southAmerica > .wrapper > main{
     background-size: cover;
     background-position: center;
+    background-color: white;
+}
+/*----------*/
+
+#africa > .wrapper > main{
+    background-image: url("../IMG/africaCulture2.jpg");
 
 }
 
 #asia > .wrapper > main{
     background-image: url("../IMG/asiaCulture.jpg");
-    background-size: cover;
-    background-position: center;
-    background-color: white;
+
 }
 
 #europe > .wrapper > main{
     background-image: url("../IMG/europeanCulture3.jpg");
-    background-size: cover;
-    background-position: center;
-    background-color: white;
 }
 
 #northAmerica > .wrapper > main{
     background-image: url("../IMG/northAmericanCulture.png");
-    background-size: cover;
-    background-position: center;
-    background-color: white;
 }
 
 #oceania > .wrapper > main{
     background-image: url("../IMG/oceanianCulture2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-color: white;
 }
 
 #southAmerica > .wrapper > main{
     background-image: url("../IMG/southAmericaCulture.png");
-    background-size: cover;
-    background-position: center;
-    background-color: white;
 }
 
 .musicContent{
@@ -209,7 +205,6 @@ footer{
     width: 90%;
     min-height: 60%;
     height: min-content;
-    padding: auto;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -277,8 +272,6 @@ p{
     #music > .wrapper > main > a{
         margin: auto;
     }
-
-
 }
 
 
