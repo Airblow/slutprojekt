@@ -88,7 +88,7 @@ a:hover{
 
 main{
     grid-area: main;
-    min-height: 90vh;
+    min-height: 600px;
     
 }
 
@@ -117,6 +117,7 @@ footer{
     margin: auto;
     margin-bottom: 6px;
     margin-top: 6px;
+    
 }
 
 .wrapper > main > section > p:nth-child(1), .wrapper > main > a > section >p:nth-child(1) {
