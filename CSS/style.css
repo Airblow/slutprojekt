@@ -7,6 +7,7 @@ body{
 
 p{
     color: black;
+    margin: 9px;
 }
 
 .wrapper{
@@ -25,7 +26,7 @@ p{
 
 main{
     grid-area: main;
-    min-height: 600px;
+    min-height: 110vh;
     
 }
 
@@ -85,7 +86,6 @@ nav > ul > li > a{
 
 a{
     text-decoration: none;
-    font-weight: bold;
     font-family: Arial,'Times New Roman';
 }
 
@@ -101,12 +101,6 @@ header > a:hover{
     width: min-content;
     margin : auto;
     border-radius: 7px;
-}
-
-main{
-    grid-area: main;
-    min-height: 900px;
-    
 }
 
 footer{
@@ -128,12 +122,9 @@ footer{
     border-radius: 7px;
     background-color: rgba(255, 255, 255, 0.9);
     width: 85vw;
-    min-height: min-content;
     padding: 7px;
     text-align: center;
     margin: auto;
-    margin-bottom: 6px;
-    margin-top: 6px;
     
 }
 
@@ -143,6 +134,7 @@ footer{
     font-family: Arial,'Times New Roman';
 }
 
+/*----------------------------------Musik"nav"------------------------------------------*/
 #music > .wrapper > main{
     display: grid;
     grid-template-columns: none;
@@ -208,6 +200,7 @@ footer{
     background-image: url("../IMG/southAmericaCulture.png");
 }
 
+/*----------------------------Kontinentsidorna---------------------------------*/
 .musicContent{
     display: grid;
     grid-template-rows: auto;
@@ -243,21 +236,17 @@ footer{
     margin: 0;
 }
 
-p{
-    margin: 9px;
-}
-
 .musicContent > section > article > p:nth-child(1){
     font-size: 125%;
     font-weight: bold;
     font-family: Arial,'Times New Roman';
 }
 
+/*------------------Media queries-----------------*/
 @media all and (min-width: 650px){
 
     #index > .wrapper > main > section{
         min-height: 50%;
-        margin: auto;
     }
 
     #music > .wrapper > main{
