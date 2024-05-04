@@ -7,29 +7,127 @@
         <link href="../CSS/style.css" rel="stylesheet">
 
     </head>
-    <body>
+    <body id="newsletter">
         <div class ="wrapper">
-            <header>
-                
+            <header role="banner">
                 <h1><a href="../index.html">Musicdex</a></h1>
                 
-                <nav>
+                <nav role="navigation">
                     <ul>
                         <li><a href="music.html">Musik</a></li>
                         <li><a href="facts.html">Faktasida</a></li>
                     </ul>
                 </nav>
-
             </header>
             
 
-            <main>
+            <main role="main">
+                <section>
+                    <article>
+                        <p>Nyhetsbrev</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores sint libero ab aspernatur. Illum laborum minus at, sit quaerat harum deserunt, nemo doloremque, iusto alias cumque. Sint est totam nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur vitae incidunt, molestias, odit est eveniet velit debitis distinctio minima blanditiis quae aut. Porro, consequuntur amet ducimus officiis ullam perspiciatis reiciendis.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores sint libero ab aspernatur. Illum laborum minus at, sit quaerat harum deserunt, nemo doloremque, iusto alias cumque. Sint est totam nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur vitae incidunt, molestias, odit est eveniet velit debitis distinctio minima blanditiis quae aut. Porro, consequuntur amet ducimus officiis ullam perspiciatis reiciendis.</p>
+                    </article>
+
+                    <form action="..." method="post">
+                        <fieldset>
+                            <legend>Nyhetsbrev</legend>
+                            <label for="fname">Namn</label>
+                            <input type="text" id="fname" name="fname" required>
+
+                            <label for="lname">Efternamn</label>
+                            <input type="text" id="lname" name="lname" required>
+
+                            <label for="age">Ålder</label>
+                            <input type="number" id="age" name="age" min="0" max="120" required>
+
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <input type="submit" value="Submit">
+                        </fieldset>
+                    </form>
+                </section>
+
+                <section>
+                    <article>
+                        <p>Månadspaket</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores sint libero ab aspernatur. Illum laborum minus at, sit quaerat harum deserunt, nemo doloremque, iusto alias cumque. Sint est totam nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur vitae incidunt, molestias, odit est eveniet velit debitis distinctio minima blanditiis quae aut. Porro, consequuntur amet ducimus officiis ullam perspiciatis reiciendis.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores sint libero ab aspernatur. Illum laborum minus at, sit quaerat harum deserunt, nemo doloremque, iusto alias cumque. Sint est totam nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur vitae incidunt, molestias, odit est eveniet velit debitis distinctio minima blanditiis quae aut. Porro, consequuntur amet ducimus officiis ullam perspiciatis reiciendis.</p>
+                    </article>
+
+                    <form action="..." method="post">
+                        <fieldset>
+                            <legend>Skapa ett Konto</legend>
+                            <label for="username">Användarnamn</label>
+                            <input type="text" id="username" name="username" required>
+
+                            <label for="mail">Email</label>
+                            <input type="email" id="mail" name="mail" required>
+                            
+                            <label for="password">Lösenord</label>
+                            <input type="password" id="password" name="password" required>
+
+                            <label for="adress">Adress</label>
+                            <input type="text" id="adress" name="adress" required>
+
+                            <label for="postcode">Postnummer</label>
+                            <input type="text" id="postcode" name="postnummer" required>
+
+                            <input type="submit" value="Skapa">
+                        </fieldset>
+                    </form>
+
+                    <form action="..." method="post">
+                        <fieldset>
+                            <legend>Hur ofta vill du få paketet?</legend>
+
+                            <label for="monthly">Månadsvis</label>
+                            <input type="radio" id="monthly" name="frequency" checked>
+
+                            <label for="othermonth">Varannan månad</label>
+                            <input type="radio" id="othermonth" name="frequency">
+
+                            <label for="quarterly">Kvartal</label>
+                            <input type="radio" id="quarterly" name="frequency">
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Premiumpaket</legend>
+
+                            <label for="basic">Vanligt</label>
+                            <input type="checkbox" id="basic" name="typeof" checked>
+
+                            <label for="premium">Premium</label>
+                            <input type="checkbox" id="premium" name="typeof">
+
+                            <label for="genre">Favorit musik genre</label>
+                            <select id="genre">
+                                <option>Pop</option>
+                                <option>Rock</option>
+                                <option>Hip Hop</option>
+                                <option>R&B</option>
+                                <option>EDM</option>
+                                <option>Country</option>
+                                <option>Jazz</option>
+                                <option>Raggae</option>
+                                <option>Latin</option>
+                                <option>Andra</option>
+                            </select>
+
+                            <input type="submit" value="Spara">
+                        </fieldset>
+
+
+                    </form>
+
+                </section>
 
             </main>
 
-
-            <footer>
-                <p><a href="newsletter.html">Prenumerera på Nyhetsbrev</a></p>
+            <footer role="contentinfo">
+                <p>E-mail: alhe06001@utb.vaxjo.se</p>
+                <p>Telefon: 070 123 45 67</p>
             </footer>
         </div>
     </body>
