@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv"> <!--sätter sidans språk till svenska-->
     <head>
-        <title>Index</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">
-        <link href="CSS/style.css" rel="stylesheet">
+        <title>Hem</title> <!--Sätter sidans title till Hem, den man ser vid flikar på webbläsaren-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--gör det möjligt att kolla skärmstorlek och anpassa sidan efter det-->
+        <meta charset="utf-8"> <!--anger teckenkodning-->
+        <link href="CSS/style.css" rel="stylesheet"> <!--länkar ihop sidan med CSS filen-->
 
     </head>
-    <body id="index">
-        <div class ="wrapper">
-            <header role="banner">
-                <h1><a href="index.html">Musicdex</a></h1>
+    <body id="index"> <!--Ger sidan en specifik ID så jag kan enkelt designa specifika sidor-->
+        <div class ="wrapper"> <!--gör en klass som gäller för alla sidor-->
+            <header role="banner"> <!--ARIA landmark banner, alltså sidohuvud-->
+                <h1><a href="index.html">Musicdex</a></h1> <!--Titeln på sidan-->
                 
-                <nav role="navigation">
-                    <ul>
-                        <li><a href="HTML/music.html">Musik</a></li>
+                <nav role="navigation"> <!--ARIA landmark navigation, global meny-->
+                    <ul> <!--oorganiserad lista-->
+                        <li><a href="HTML/music.html">Musik</a></li> <!--Listelement med länk till annan sida-->
                         <li><a href="HTML/facts.html">Faktasida</a></li>
                     </ul>
                 </nav>
 
             </header>           
 
-            <main role="main">
-                <section>
-                    <h2>Välkommen!</h2>
+            <main role="main"> <!--huvudinnehåll med ARIA landmark "main"-->
+                <section> <!--section med relaterat innehåll, paragrafer och relatierad headline-->
+                    <h2>Välkommen!</h2> <!--headline2-->
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut accusantium repellat autem omnis reiciendis numquam praesentium officia molestiae repudiandae consequatur laudantium ullam, cupiditate, error minus neque provident, ex nulla. Ducimus.
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laboriosam a debitis nesciunt, id omnis sed aliquid incidunt qui maxime deleniti voluptates sit iste ducimus rerum, laborum eligendi animi consectetur.
                     </p>
@@ -52,7 +52,7 @@
             </main>
 
 
-            <footer role="contentinfo">
+            <footer role="contentinfo"> <!--siofoten med ARIA landmark "contentinfo"-->
                 <p>E-mail: alhe06001@utb.vaxjo.se</p>
                 <p>Telefon: 070 123 45 67</p>
             </footer>

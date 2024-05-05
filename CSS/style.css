@@ -1,202 +1,180 @@
-body{ 
+body{ /*Sätter padding och margin på 0 så att det inte blir vita kanter på sidan*/
     margin: 0;
     padding: 0;   
 }
 
-p{
-    color: black;
-    margin: 9px;
-    font-size: 1.1em;
-    font-family: Arial, 'Times New Roman', Times, serif
+p{ /*Fixar design alla paragarf element*/
+    color: black; /*Textfärg svart*/
+    margin: 9px; /*Mellanrum mellan paragraf element och andra element på 9px*/
+    font-size: 1.1em; /*Sätter textstorleken till 110% utav föräldrar elementet*/
+    font-family: Sedan, Arial, 'Times New Roman', Times, serif /*Font familj, börjar med min font face Sedan, och går vidare tills den hittar en font användaren har installerad, tills den kommer till serif som de allra flesta har*/
 }
 
-.wrapper{
-    max-width: 100vw;
-    height: min-content;
-    display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: min-content min-content min-content;
-        grid-template-areas: 
+.wrapper{ /*Sätter design på klassen wrapper som är default på alla sidor*/
+    max-width: 100vw; /*Max bredden är 100% utav användarens skärmbredd*/
+    height: min-content; /*Höjden är så hög att den får plats med minst all content*/
+    display: grid; /*Skapar en grid*/
+        grid-template-columns: 1fr; /*Gridden har bara 1 kolumn*/
+        grid-template-rows: min-content min-content min-content; /*Gridden har tre rader, alla rader är så stora att de får plats med minst all kontent inom dem*/
+        grid-template-areas: /*definierar grid areorna "header", "main" och "footer"*/
             "header"
             "main"
             "footer";
 }
 
-main{
-    grid-area: main;
-    min-height: 90vh;  
+main{ 
+    grid-area: main; /*sätter main elementet inom "main" i gridden*/
+    min-height: 90vh;  /*minsta höjden på sidan ska vara 90% utav användarens skärmhöjd*/
 }
 
-header{
-    grid-area: header;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    background-color: skyblue;
-    border-bottom: solid black;
-    display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas:
+header{ /*Fixar design på min header*/
+    grid-area: header; /*header elementet finns inom grid area "header"*/
+    padding: 0; /*sätter padding till 0 så att det inte blir ett konstigt indrag på sidhuvudet*/
+    text-align: center; /*gör så att all text inom header är centrerad*/
+    background-color: skyblue; /*Sätter bakgrundsfärgen på header elementet*/
+    border-bottom: solid black; /*Headern får en border som är solid och svart*/
+    display: grid; /*skapar en grid inom header, för att enkelt skilja på naven (som är inom header) och h1an*/
+        grid-template-rows: 1fr 1fr; /*Gridden har 2 rader som är 1fr stora*/
+        grid-template-areas: /*Grid areorna "title" och "navigation"*/
             "title"
             "navigation"  
 }
 
-nav{
-    margin: auto;
-    width: 100%;
-    font-weight: bold;
+nav{ /*Skapar designen för nav element*/
+    margin: auto; /*sätter margin på auto, så att elementet centreras*/
+    width: 100%; /*Gör så att nav elementet är 100% i bredd, eftersom "margin: auto" gör så att den inte är det*/
+    font-weight: bold; /*Gör så att texten inom nav är tjock*/
 }
 
-h1{
-    grid-area: title;
-    font-size: 50px;
-    margin: auto;
+h1{ /*Fixar h1 design*/
+    grid-area: title; /*h1 hamnar inom grid arean "title" på header*/
+    font-size: 7ch; /*Texten är lika stor som bredden på 7 0or*/
+    margin: auto; /*centrerar h1 elementet, och gör så att det bara tar upp så mycket plats den behöver*/
 }
 
-footer{
-    grid-area: footer;
-    background-color: skyblue;
-    border-top: solid black;
-    min-height: 5vh;
+footer{ /*fixar footer design*/
+    grid-area: footer; /*footern hamnar i grid arean "footer" inom wrapper*/
+    background-color: skyblue; /*Bakgrundfärgen för footern*/
+    border-top: solid black; /*Gör en bordern för footern som är solid och svart*/
+    min-height: 5vh; /*Minsta höjden på footern är 5% utav användarens skärmhöjd*/
 }
 
-nav > p > a{
-    border: 2px solid black;
-    border-radius: 7px;
-    padding: 5px;
-    text-align: center;
-    font-weight: bold;
-    margin: auto;
-    display: flex;
-        justify-content: center;
-
-    background-color: white;
-    width: 50%;
-
+nav > p > a{ /*Sätter design specifikt för länk element inom paragrafer som är inom nav*/ /*För local nav på faktasidan*/
+    border: 2px solid black; /*sätter en border på länkarna som är solid, svart och 2px tjock*/
+    border-radius: 7px; /*Rundar hörnen på länk bordern till 7px*/
+    padding: 5px; /*gör så att paddingen är 5px, detta för att skapa mellanrum mellan brodern och själva texten*/
+    text-align: center; /*Centrerar texten inom länkelementet*/
+    margin: auto; /*Centrerar elementet*/
 }
 
-/*-------------------Headlines---------------------*/
-section > p:nth-child(1){
-    font-weight: bold;
-    font-size: 125%;
-}
-
-section > article > p:nth-child(1){ 
-    font-weight: bold;
-    font-size: 125%;
-}
-
-/*------------------------Global meny------------------------*/
-h1 > a:hover{
-border: 2px solid black;
-border-radius: 7px;
-}
-
-nav > ul{
-    grid-area: navigation;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav > ul > li{
-    border: solid black;
-    font-size: 18px;
-    width: 92%;
-    margin: auto;
-}
-
-nav > ul > li > a{
-    display: block;
-    padding: 10px;
-    background-color: white;
-    color: black;
-    transition: color 0.3s;
-}
-
-a{
-    text-decoration: none;
-    font-family: Arial,'Times New Roman';
-}
-
-/*-------------------------------Index----------------------------------*/
-#index > .wrapper > main{
-    background-image: url("../IMG/worldMap.jpg");
-
-    display:grid;
-}
-
-#index > .wrapper > main > section{
-    border: solid black;
-    border-radius: 7px;
-    background-color: rgba(255, 255, 255, 0.9);
-    width: 85vw;
-    padding: 7px;
-    text-align: center;
-    margin: auto;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
-
-/*----------------------------------Musik"nav"------------------------------------------*/
-#music > .wrapper > main{
-    display: grid;
-        grid-template-columns: none;
-
-    background-image: url("../IMG/worldMap.jpg");
-
-}
-
-#music > .wrapper > main > a{
-    border: solid black;
-    border-radius: 7px;
-    width: 90%;
-    height: min-content;
-    min-height: 70%;
-    margin: auto;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    text-decoration: none;
-    text-align: center;
-    background-color: rgb(255, 255, 255, 0.9);
-}
-
-#music > .wrapper > main > a:hover{
-    background-color:lightgray
-}
-
-#music > .wrapper > main > a:active{
-    background-color:lightgray
-}
-
-#music > .wrapper > main > a:focus{
-    background-color:lightgray
-}
-
-/*----------------------------Kontinentsidorna---------------------------------*/
 main{
     background-size: cover;
     background-position: center;
     background-color: white;
 }
 
-iframe, video{
-    width: 90%;
-    height: 90%;
-    border: solid black;
-    border-radius: 7px;
+/*-------------------Headlines---------------------*/
+section > p:nth-child(1), section > article > p:nth-child(1){ /*gör så att de första p elementet inom section och första p elementen inom article inom section blir påverkade*/
+    font-weight: bold; /*texten blir tjock*/
+    font-size: 125%; /*textstorleken är 125% av originalstorleken*/
+}
+
+/*------------------------Global meny------------------------*/
+h1 > a:hover{ /*akriveras när man håller över h1*/
+border: 2px solid black; /*gör så att det kommer fram en border som är solid svart och 2 px tjock*/
+border-radius: 7px; /*rundar av borderns kanter*/
+}
+
+nav ul{ /*påverkar alla ul element inom nav element*/
+    grid-area: navigation; /*inom grid arean "navigation" som är en del utav header*/
+    display: grid; /*skapar en grid*/
+    grid-template-columns: 1fr 1fr; /*grid med 2 kolumner som är lika stora*/
+    list-style-type: none; /*tar bort prickarna från ol elementen*/
+    margin: 0; /*tar bort margin så att elementet inte tar lika mycket plats*/
+    padding: 0; /*tar bort paddingen så att elementet är centrerat utan konstig padding åt vänster*/
+}
+
+nav li{ /*påverkar alla li element inom nav*/
+    border: solid black; /*Skapar en solid svart border runt li elementet*/
+    font-size: 3ex; /*textstorleken är höjden utav 3 små ex ungefär*/
+    width: 90%; /*Bredden på li elementen är 90% utav columnen de är inom*/
+    margin: auto; /*Centrerar li elementen*/
+}
+
+nav > ul > li > a{ /*påverkar länk element inom li inom ul inom nav*/
+    display: block; /*Gör så att länken täcker hela li elementet*/
+    padding: 10px; /*Gör så att det är mellanrum mellan länken och bordern i li*/
+    background-color: white; /*Gör bakgrunden till vit*/
+}
+
+a{
+    text-decoration: none; /*tar brot understrykningen på länkarna*/
+}
+
+/*-------------------------------Index----------------------------------*/
+#index > .wrapper > main{ /*påverkar main inom wrapper på sidan med id index*/
+    display:grid; /*Skapar en grid inom main på sida #index*/
+        grid-template-rows: 1fr 1fr; /*Ser till att griden har 2 rows som är lika stora*/
+}
+
+#index main, #music main, #newsletter main{ /* main på newsletter och index*/
+    background-image: url("../IMG/worldMap.jpg")  /*gör bakgrunden till en bild*/
+}
+
+#index > .wrapper > main > section{ /*ändrar sektion element inom main inom wrapper inom #index*/
+    border: solid black; /*skapar en border, solid och svart*/
+    border-radius: 7px; /*rundar hörnen på bordern*/
+    background-color: rgba(255, 255, 255, 0.9); /*ändrar bakgrundsfär till vit med like transparency*/
+    width: 85vw; /*Bredden är 85% utav användarens skärmbredd*/
+    padding: 7px; /*padding till 7 för att skapa mellanrum mellan border och text*/
+    text-align: center; /*Centrerar all text inom section*/
+    margin: auto; /*Centrerar sektionen*/
+    margin-bottom: 5px; /*gör så att den har lite mellanrum från botten*/
+    margin-top: 5px; /*samma som bottom fast på toppen*/
+}
+
+/*----------------------------------Musik"nav"------------------------------------------*/
+#music main{ /*påverkar main inom #music*/
+    display: grid; /*skapar en grid*/
+        grid-template-columns: none; /*gridden har ingar kolumer*/
+}
+
+#music > .wrapper > main > a{ /*påverkar a inom main inom wrapper inom #music*/
+    border: solid black; /*skapar en border solid och svart*/
+    border-radius: 7px; /*avrundar kanterna på bordern*/
+    width: 90%; /*Bredden på länk elementet är 90% utav bredden*/
+    height: min-content; /*höjden är tillräckligt för minst all kontent inom den*/
+    min-height: 70%; /*Gör så att elementen har en minsta höjd på 70%*/
+    margin: auto; /*centrerar elementen*/
+    margin-bottom: 5px; /*skapar mellanrum från botten och länk elementet*/
+    margin-top: 5px; /*skapar mellanrum från toppen och länk elementet*/
+    text-decoration: none; /*Tar bort linjerna under texten i länken*/
+    text-align: center; /*centrerar texten*/
+    background-color: rgb(255, 255, 255, 0.9); /*gör bakgrunden till vit och transparant*/
+}
+
+#music > .wrapper > main > a:hover, #music > .wrapper > main > a:active, #music > .wrapper > main > a:focus{
+    background-color:lightgray /*gör bakgrunden på a till light gray när man hoverar, focuserar, när den är aktiv på a inom main på #music*/
+}
+
+/*----------------------------Kontinentsidorna---------------------------------*/
+
+iframe, video{ /*påverkar iframe och video element*/
+    width: 90%; /*sätter bredden till 90% utav föräldrarelementets bredd*/
+    height: 90%; /*sätter höjden till 90% utav föräldrarelementets höjd*/
+    border: solid black; /*skapar en border solid och svart runt elementen*/
+    border-radius: 7px; /*rundar av hörnen på bordern*/
 }
 
 iframe{
-    margin: auto;
+    margin: auto; /*centrerar iframe element*/
 }
 
 video{
-    height: 160px;
+    height: 150px; /*sätter höjden på video element till 150px*/
 }
 
+/*sätter bakgrunderna på de olika kontinentsidorna*/
 #africa > .wrapper > main{
     background-image: url("../IMG/africaCulture2.jpg");
 }
@@ -220,42 +198,43 @@ video{
 #southAmerica > .wrapper > main{
     background-image: url("../IMG/southAmericaCulture.png");
 }
+/*-----------*/
 
-.musicContent{
+.musicContent{ /*skapar en grid med en kolumn inom main med klass .musicContent som har rows för varje element och bara 1 kolumn*/
     display: grid;
         grid-template-rows: auto;
         grid-template-columns: 1fr;
 }
 
-.musicContent > section{
-    border: solid black;
-    border-radius: 7px;
-    width: 90%;
-    min-height: 60%;
-    height: min-content;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 5px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.7);
+.musicContent section{ /*påverkar section inom .musicContent*/
+    border: solid black; /*skapar en border*/
+    border-radius: 7px; /*rundarn borderns hörn*/
+    width: 90%; /*höjden är 90%*/
+    min-height: 60%; /*den minsta höjden är 60%*/
+    height: min-content; /*höjden är så att minst all kontent får plats*/
+    margin: auto; /*centrerar*/
+    margin-top: 10px; /*mellanrum från toppen*/
+    margin-bottom: 10px; /*mellanrum från botten*/
+    padding: 5px; /*mellanrum mellan text och senction*/
+    text-align: center; /*centrerar texten inom section*/
+    background-color: rgba(255, 255, 255, 0.7); /*ändrar bakgrunds färg*/
 }
 
-.musicContent > section > article{
-    grid-area: mainContent;
-    margin: 0;
+.musicContent > section > article{ /*påverkar article inom section inom musicContent*/
+    grid-area: mainContent; /*lägger article inom grid arean mainContent, som finns i media queries*/
+    margin: 0; /*tar bort margin*/
 }
 
 /*---------------------Informationssida----------------------*/
-#facts > .wrapper > main{
-    display: grid;
+#facts > .wrapper > main{ /*påverkar main inom #facts*/
+    display: grid; /*skapar en grid*/
         grid-template-columns: none;
-        grid-template-rows: min-content min-content min-content min-content;
+        grid-template-rows: min-content min-content min-content min-content; /*grid med 4 rows, alla så höga att all kontent får plats*/
     
 }
 
-#facts .wrapper{
-    display: grid;
+#facts .wrapper{ /*påverkar .wrapper*/
+    display: grid; /*ändrar i wrappers grid så att den lägger till en "localnav" position*/
         grid-template-rows: min-content min-content min-content min-content;
         grid-template-areas: 
             "header"
@@ -266,72 +245,72 @@ video{
 }
 
 #facts .wrapper >nav{
-    grid-area: localnav;
+    grid-area: localnav; /*lägger en nav i localnav positionen*/
 }
 
-#facts article{
-    border: solid black;
-    border-radius: 7px;
-    margin: auto;
-    max-width: 90%;
-    max-height: 85%;
-    max-height: min-content;
+#facts article{  
+    border: solid black; 
+    border-radius: 7px;   
+    margin: auto;   
+    max-width: 90%;  
+    max-height: 85%;  
+    max-height: min-content;  
     
 }
 
 /*Topp sektionen*/
 
 #facts > .wrapper > main > section:nth-child(1){
-    background-color: hsl(0, 100%, 81%);
+    background-color: hsl(0, 100%, 81%); /*ändrar bakgrundsfärgen i den första sektionen i #facts*/
 }
 
-#facts img{
+#facts img{ /*ser till så att bilden inom #facts är inom sektionens dimensioner*/
     width: 100%;
     height: 100%;
 }
 
 figure{
-    margin: auto;
+    margin: auto; /*centrerar bilden och gör så att den fyller toppen av skärmen*/
+
 }
 
-#facts p, #facts h2{
+#facts p, #facts h2{ /*centrerar h2 och p inom #facts*/
     text-align: center;
 }
 
-footer > p{
+#facts .wrapper  > footer > p{ /*gör så att texten i footer är på vänster sidan eftersom jag ändrade det i koden ovan*/
     text-align: left;
 }
 
-#facts > .wrapper > main > section:nth-child(1) > article{
-    background-color: hsla(0, 0%, 100%, 0.845);
-}
+
 
 /*-----------*/
 
-/*Mitt sektionen*/
-#facts > .wrapper > main > section:nth-child(2){
-    background-color: hwb(147 57% 0% / 0.622);
+#facts article{
+    background-color: hsla(0, 0%, 100%, 0.845); /*ändrar bakgrundsfärgen utav article inom #facts*/
 }
 
-#facts > .wrapper > main > section:nth-child(2) > article{
-    background-color: hsla(0, 0%, 100%, 0.845);
+/*Mitt sektionen*/
+#facts > .wrapper > main > section:nth-child(2){ /*ändrar bakgrundsfärgen på andra sektionen*/
+    background-color: hwb(147 57% 0% / 0.622);
 }
 
 /*------------*/
 
 /*Tabell*/
-table, th ,td{
+table, th ,td{ /*skapar en tabell med en border, centrerar texten, centrerar*/
     border: solid black;
     border-collapse: collapse;
     text-align: center;
-    margin: auto;
-    padding: 5px;
+    margin: auto; /*centrerar tabellen*/
+    padding: 5px; /*gör cellerna i tabellen större*/
 }
 
 table{
-    margin-top: 10px;
+    margin-top: 10px; /*skapar lite mellanrum från elementet ovan*/
 }
 
+/*Zebra striping*/
 tr:nth-child(odd){
     background-color: rgb(255, 255, 94);
 }
@@ -343,8 +322,9 @@ tr:nth-child(even){
 th{
     background-color: rgb(182, 234, 255);
 }
+/*------*/
 
-caption{
+caption{ /*Ändrar texten till tabellen till tjock och 18 px*/
     font-weight: bold;
     font-size: 18px;
 }
@@ -352,27 +332,33 @@ caption{
 
 /*Organiserade Listor*/
 
-#facts > .wrapper > main:nth-child(2) > section{
+#facts > .wrapper > main > section{ /*gör så att listornas text centreras och att list punkterna följer med texten*/
     list-style-position: inside;
     text-align: center;
 }
 
+ul{ /*tar bort den padding som automatiskt finns på oorganiserade listor*/
+    padding: 0;
+}
 
 /*Bottensektionen*/
-dt{
+dt{  /*ändrar texten till tjock*/
     font-weight: bold;
 }
 
 dd{
-    margin: 0;
+    margin: 0; /*gör så at beskrivningen är aligned med dt elementet*/
 }
 
-#facts main  ul > li{
+#facts main  ul > li{ /*skapar mellanrum mellan li elementen*/
     margin: 10px;
 }
 
-#facts section:nth-child(3) > section:nth-child(2){
-    margin: 10px;
+#facts section:nth-child(3) > section:nth-child(1), #facts section:nth-child(3) > section:nth-child(2){ /*centrerar listorna*/
+    margin: auto;
+}
+
+#facts section:nth-child(3) > section:nth-child(2){ /*Skapar en border runt ul i #facts*/
     border: solid black;
     border-radius: 7px;
 }
@@ -380,50 +366,52 @@ dd{
 
 /*----------------------------Nyhetsbrevet------------------------------------*/
 
-#newsletter main{
-    height: min-content;
-}
-
-#newsletter section{
+#newsletter section{ /*Skapar border, centrerar och ändrar bakgrund på section elementen inom #newsletter, gör även så att de har mellanrum mellan sig*/
     border: solid black;
     border-radius: 7px;
     margin: auto;
-    height: 90%;
-    min-height: min-content;
+    height: min-content;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 7px;
+    margin-top: 7px;
 }
 
-#newsletter section form{
+#newsletter section form{ /*centrerar mina forms*/
     margin: auto;
 }
 
-input{
+input{ /*gör så att mina inputs är raddade vertikalt och mellanrum mellan dem*/
     display: block;
     margin-bottom: 10px;
 }
 
-
-
 /*---------------------Älska Fokusera Hata-----------------------*/
 
-a:link{
+a:link{ /*Länken är svart*/
     color: black;
 }
 
-a:visited{
+a:visited{ /*fortsätter vara svart när man har visited länken*/
     color: black;
 }
 
-a:focus, a:hover{
+a:focus, a:hover{ /*när man fokuserar och hoverar över länken blir den ljusgrå*/
     background-color: lightgrey;
 }
 
-a:active{
+a:active{ /*när den är aktiv blir den ljusgrå*/
     background-color: lightgrey;
+}
+
+/*importerar en egen font*/
+@font-face{
+    font-family: Sedan;
+    src: url(../FONTS/SedanSC-Regular.ttf);
 }
 
 /*------------------Media queries-----------------*/
-@media all and (min-width: 650px){
-    .musicContent > section:nth-child(1n+2){
+@media all and (min-width: 650px){ /*när en skärm är minst 650 pixlar börjar koden gälla*/
+    .musicContent > section:nth-child(1n+2){/*skapar en två spaltig grid inom alla sektioner förutom den första inom musicContent*/
         display: grid;
             grid-template-rows: 1fr;
             grid-template-columns: 4fr 7fr;
@@ -431,22 +419,22 @@ a:active{
                 "sideContent mainContent";
     }
 
-    #index > .wrapper > main > section{
+    #index > .wrapper > main > section{ /*Centrerar och bestämmer minsta höjden på sektioner inom #index*/
         min-height: 50%;
         margin: auto;
     }
 
-    #music > .wrapper > main{
+    #music > .wrapper > main{ /*skapar en grid på #music sidan med 2 spalter och 3 rader*/
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
     }
 
-    #music > .wrapper > main > a{
+    #music > .wrapper > main > a{ /*Centrerar a elementen inom music inom wrapper inom main inom a*/
         margin: auto;
     }
 
-    .musicContent{
+    .musicContent{ /*skapar en grid inom musicContent som är 2 spaltig och 4 rader*/
         display:grid;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -454,48 +442,42 @@ a:active{
         "top top";
     }
 
-    .musicContent > section:nth-child(1){
+    .musicContent > section:nth-child(1){ /*gör så att första sectionen får sin egen area inom musicContent*/
         grid-area: top;
     }
 
-    .musicContent > section{
+    .musicContent > section{ /*Centrerar sectionen och bestämmer höjden*/
         margin: auto;
-        max-height: 85%;
+        height: min-content;
     }
 
-    nav > p > a{
-        width: 25%;
-    }
-
-
-    #newsletter section{
-        min-height: min-content;
-        max-width: 90%;
+    #newsletter section{ /*Centrerar och bestämmer bredden på sectionerna under newsletter*/
+        width: 85%;
         margin: auto;
     }
 
-    #newsletter main{
+    #newsletter main{ /*skapar en grid inom newsletter som har 2 rader*/
         display: grid;
         grid-template-rows: 1fr 1fr;
     }
 
-    #newsletter article{
+    #newsletter article{ /*Centrerar text inom article inom newsletter*/
         text-align:center;
     }
 
-    #newsletter section:nth-child(1), #newsletter section:nth-child(2){
+    #newsletter section:nth-child(1){ /*skapar en grid inom första sectionen inom newsletter, så att text och forms separeras*/
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
     
-    #newsletter section:nth-child(2){
+    #newsletter section:nth-child(2){ /*Skapar en grid inom andra sektionen inom newsletter så att formsen och texten separeras*/
         display: grid;
         grid-template-columns: 2fr 1fr 1fr;
     }
 }
 
-@media all and (min-width: 800px){
-    #facts > .wrapper > main{
+@media all and (min-width: 800px){ /*specifikt om man har en skärm över 800px så aktiveras koden*/
+    #facts > .wrapper > main{ /*skapar en grid inom main inom wrapper inom facts som är 3 spaltig och har 3 rader*/
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows:min-content 1fr 1fr;
         grid-template-areas: 
@@ -504,12 +486,14 @@ a:active{
             "PI PI PI"
     }
 
-    #facts > .wrapper > main > section:nth-child(1){
+    /*------------*/
+    #facts > .wrapper > main > section:nth-child(1){ /*skapar en grid inom den första sektionen, sektionen är inom grid area "HH"*/
         grid-area: HH;
         display: grid;
             grid-template-columns: 1fr 2fr;
 
-            border-bottom: solid black;
+            border-bottom: solid black; /*skapar en border på botten för att avgränsa sektionen från nedre sektion*/
+            padding: 10px; /*gör så att elementen inom sectionen inte är rakt upp mot kanten av av sectionen*/
     }
 
     #facts > .wrapper > main > section:nth-child(2){
@@ -518,19 +502,20 @@ a:active{
             grid-template-columns: 1fr 1fr 1fr;
 
         border-bottom: solid black;
+        padding: 10px;
     }
 
     #facts > .wrapper > main > section:nth-child(3){
         grid-area: PI;
         display: grid;
             grid-template-columns: 1fr 1fr 1fr;
+            padding: 10px;
     }
+    /*---------------*/
 
-    img{
+    img{ /*skapar en border runt img*/
         border: solid black;
         border-radius: 7px;
-        margin-top: 5px;
-        margin-bottom:5px;
     }
 
     

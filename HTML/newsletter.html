@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="sv">
     <head>
-        <title>Index</title>
+        <title>Nyhetsbrev</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <link href="../CSS/style.css" rel="stylesheet">
@@ -29,22 +29,22 @@
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores sint libero ab aspernatur. Illum laborum minus at, sit quaerat harum deserunt, nemo doloremque, iusto alias cumque. Sint est totam nihil. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur vitae incidunt, molestias, odit est eveniet velit debitis distinctio minima blanditiis quae aut. Porro, consequuntur amet ducimus officiis ullam perspiciatis reiciendis.</p>
                     </article>
 
-                    <form action="..." method="post">
-                        <fieldset>
-                            <legend>Nyhetsbrev</legend>
-                            <label for="fname">Namn</label>
-                            <input type="text" id="fname" name="fname" required>
+                    <form action="..." method="post"> <!--skapar en form med metoden post som skickar informationen till för nu oangiven plats-->
+                        <fieldset> <!--Fieldset va en massa inputs, som en section som samlar inputs som relaterar-->
+                            <legend>Nyhetsbrev</legend> <!--skapar en headline till fieldset-->
+                            <label for="fname">Namn</label> <!--som en headline till inputetn, genom "for" attributet och "id" attributet på inputen-->
+                            <input type="text" id="fname" name="fname" required> <!--input som man skriver in text, attributet required kan inte submit utan att vara ifylld-->
 
-                            <label for="lname">Efternamn</label>
+                            <label for="lname">Efternamn</label> 
                             <input type="text" id="lname" name="lname" required>
 
                             <label for="age">Ålder</label>
-                            <input type="number" id="age" name="age" min="0" max="120" required>
+                            <input type="number" id="age" name="age" min="0" max="120" required> <!--input typen number-->
 
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required> <!--input typen email, kräver att man har ett @-->
 
-                            <input type="submit" value="Submit">
+                            <input type="submit" value="Submit"> <!--knapp som skickar informationen, med texten "Submit"-->
                         </fieldset>
                     </form>
                 </section>
@@ -66,13 +66,16 @@
                             <input type="email" id="mail" name="mail" required>
                             
                             <label for="password">Lösenord</label>
-                            <input type="password" id="password" name="password" required>
+                            <input type="password" id="password" name="password" required> <!--input type password, texten blir prickar-->
 
                             <label for="adress">Adress</label>
                             <input type="text" id="adress" name="adress" required>
 
                             <label for="postcode">Postnummer</label>
                             <input type="text" id="postcode" name="postnummer" required>
+
+                            <label for="extra">Bra att veta </label>
+                            <input type="textbox" id="extra" name="extra"> <!--input typ textbox-->
 
                             <input type="submit" value="Skapa">
                         </fieldset>
@@ -83,7 +86,7 @@
                             <legend>Hur ofta vill du få paketet?</legend>
 
                             <label for="monthly">Månadsvis</label>
-                            <input type="radio" id="monthly" name="frequency" checked>
+                            <input type="radio" id="monthly" name="frequency" checked> <!--input typ radio, alltså att clicka en rund knapp, attributet checked gör att den är automatiskt checkad-->
 
                             <label for="othermonth">Varannan månad</label>
                             <input type="radio" id="othermonth" name="frequency">
@@ -96,13 +99,13 @@
                             <legend>Premiumpaket</legend>
 
                             <label for="basic">Vanligt</label>
-                            <input type="checkbox" id="basic" name="typeof" checked>
+                            <input type="checkbox" id="basic" name="typeof" checked> <!--input checkbox gör så att inputen är en checkmark-->
 
                             <label for="premium">Premium</label>
                             <input type="checkbox" id="premium" name="typeof">
 
-                            <label for="genre">Favorit musik genre</label>
-                            <select id="genre">
+                            <label for="genre">Favorit musik genre</label> 
+                            <select id="genre"> <!--input select, en drop down meny med alternativ. Alternativen är "option" elementen-->
                                 <option>Pop</option>
                                 <option>Rock</option>
                                 <option>Hip Hop</option>
