@@ -11,6 +11,7 @@ p{ /*Fixar design alla paragarf element*/
 }
 
 .wrapper{ /*Sätter design på klassen wrapper som är default på alla sidor*/
+    text-align: center;
     max-width: 100vw; /*Max bredden är 100% utav användarens skärmbredd*/
     height: min-content; /*Höjden är så hög att den får plats med minst all content*/
     display: grid; /*Skapar en grid*/
@@ -25,12 +26,13 @@ p{ /*Fixar design alla paragarf element*/
 main{ 
     grid-area: main; /*sätter main elementet inom "main" i gridden*/
     min-height: 90vh;  /*minsta höjden på sidan ska vara 90% utav användarens skärmhöjd*/
+    background-size: cover; /*Gör så att bakgrunden skalar till skärmen*/
+    background-position: center; /*centrerar bakgrunden*/
 }
 
 header{ /*Fixar design på min header*/
     grid-area: header; /*header elementet finns inom grid area "header"*/
     padding: 0; /*sätter padding till 0 så att det inte blir ett konstigt indrag på sidhuvudet*/
-    text-align: center; /*gör så att all text inom header är centrerad*/
     background-color: skyblue; /*Sätter bakgrundsfärgen på header elementet*/
     border-bottom: solid black; /*Headern får en border som är solid och svart*/
     display: grid; /*skapar en grid inom header, för att enkelt skilja på naven (som är inom header) och h1an*/
@@ -41,7 +43,6 @@ header{ /*Fixar design på min header*/
 }
 
 nav{ /*Skapar designen för nav element*/
-    margin: auto; /*sätter margin på auto, så att elementet centreras*/
     width: 100%; /*Gör så att nav elementet är 100% i bredd, eftersom "margin: auto" gör så att den inte är det*/
     font-weight: bold; /*Gör så att texten inom nav är tjock*/
 }
@@ -49,7 +50,6 @@ nav{ /*Skapar designen för nav element*/
 h1{ /*Fixar h1 design*/
     grid-area: title; /*h1 hamnar inom grid arean "title" på header*/
     font-size: 7ch; /*Texten är lika stor som bredden på 7 0or*/
-    margin: auto; /*centrerar h1 elementet, och gör så att det bara tar upp så mycket plats den behöver*/
 }
 
 footer{ /*fixar footer design*/
@@ -63,14 +63,6 @@ nav > p > a{ /*Sätter design specifikt för länk element inom paragrafer som �
     border: 2px solid black; /*sätter en border på länkarna som är solid, svart och 2px tjock*/
     border-radius: 7px; /*Rundar hörnen på länk bordern till 7px*/
     padding: 5px; /*gör så att paddingen är 5px, detta för att skapa mellanrum mellan brodern och själva texten*/
-    text-align: center; /*Centrerar texten inom länkelementet*/
-    margin: auto; /*Centrerar elementet*/
-}
-
-main{
-    background-size: cover;
-    background-position: center;
-    background-color: white;
 }
 
 /*-------------------Headlines---------------------*/
@@ -94,13 +86,6 @@ nav ul{ /*påverkar alla ul element inom nav element*/
     padding: 0; /*tar bort paddingen så att elementet är centrerat utan konstig padding åt vänster*/
 }
 
-nav li{ /*påverkar alla li element inom nav*/
-    border: solid black; /*Skapar en solid svart border runt li elementet*/
-    font-size: 3ex; /*textstorleken är höjden utav 3 små ex ungefär*/
-    width: 90%; /*Bredden på li elementen är 90% utav columnen de är inom*/
-    margin: auto; /*Centrerar li elementen*/
-}
-
 nav > ul > li > a{ /*påverkar länk element inom li inom ul inom nav*/
     display: block; /*Gör så att länken täcker hela li elementet*/
     padding: 10px; /*Gör så att det är mellanrum mellan länken och bordern i li*/
@@ -109,6 +94,25 @@ nav > ul > li > a{ /*påverkar länk element inom li inom ul inom nav*/
 
 a{
     text-decoration: none; /*tar brot understrykningen på länkarna*/
+}
+
+nav li, 
+#index > .wrapper > main > section,
+#music > .wrapper > main > a,
+iframe, 
+video,
+.musicContent section,
+#facts article,
+#facts section:nth-child(3) > section:nth-child(2),
+#newsletter section{
+    border: solid black; /*Skapar en solid svart border runt li elementet*/
+    border-radius: 7px;
+}
+
+nav li{ /*påverkar alla li element inom nav*/
+    font-size: 3ex; /*textstorleken är höjden utav 3 små ex ungefär*/
+    width: 90%; /*Bredden på li elementen är 90% utav columnen de är inom*/
+    border-radius: 0px;
 }
 
 /*-------------------------------Index----------------------------------*/
@@ -122,13 +126,9 @@ a{
 }
 
 #index > .wrapper > main > section{ /*ändrar sektion element inom main inom wrapper inom #index*/
-    border: solid black; /*skapar en border, solid och svart*/
-    border-radius: 7px; /*rundar hörnen på bordern*/
     background-color: rgba(255, 255, 255, 0.9); /*ändrar bakgrundsfär till vit med like transparency*/
     width: 85vw; /*Bredden är 85% utav användarens skärmbredd*/
     padding: 7px; /*padding till 7 för att skapa mellanrum mellan border och text*/
-    text-align: center; /*Centrerar all text inom section*/
-    margin: auto; /*Centrerar sektionen*/
     margin-bottom: 5px; /*gör så att den har lite mellanrum från botten*/
     margin-top: 5px; /*samma som bottom fast på toppen*/
 }
@@ -140,16 +140,12 @@ a{
 }
 
 #music > .wrapper > main > a{ /*påverkar a inom main inom wrapper inom #music*/
-    border: solid black; /*skapar en border solid och svart*/
-    border-radius: 7px; /*avrundar kanterna på bordern*/
     width: 90%; /*Bredden på länk elementet är 90% utav bredden*/
     height: min-content; /*höjden är tillräckligt för minst all kontent inom den*/
     min-height: 70%; /*Gör så att elementen har en minsta höjd på 70%*/
-    margin: auto; /*centrerar elementen*/
     margin-bottom: 5px; /*skapar mellanrum från botten och länk elementet*/
     margin-top: 5px; /*skapar mellanrum från toppen och länk elementet*/
     text-decoration: none; /*Tar bort linjerna under texten i länken*/
-    text-align: center; /*centrerar texten*/
     background-color: rgb(255, 255, 255, 0.9); /*gör bakgrunden till vit och transparant*/
 }
 
@@ -162,12 +158,6 @@ a{
 iframe, video{ /*påverkar iframe och video element*/
     width: 90%; /*sätter bredden till 90% utav föräldrarelementets bredd*/
     height: 90%; /*sätter höjden till 90% utav föräldrarelementets höjd*/
-    border: solid black; /*skapar en border solid och svart runt elementen*/
-    border-radius: 7px; /*rundar av hörnen på bordern*/
-}
-
-iframe{
-    margin: auto; /*centrerar iframe element*/
 }
 
 video{
@@ -207,16 +197,12 @@ video{
 }
 
 .musicContent section{ /*påverkar section inom .musicContent*/
-    border: solid black; /*skapar en border*/
-    border-radius: 7px; /*rundarn borderns hörn*/
     width: 90%; /*höjden är 90%*/
     min-height: 60%; /*den minsta höjden är 60%*/
     height: min-content; /*höjden är så att minst all kontent får plats*/
-    margin: auto; /*centrerar*/
     margin-top: 10px; /*mellanrum från toppen*/
     margin-bottom: 10px; /*mellanrum från botten*/
     padding: 5px; /*mellanrum mellan text och senction*/
-    text-align: center; /*centrerar texten inom section*/
     background-color: rgba(255, 255, 255, 0.7); /*ändrar bakgrunds färg*/
 }
 
@@ -248,10 +234,7 @@ video{
     grid-area: localnav; /*lägger en nav i localnav positionen*/
 }
 
-#facts article{  
-    border: solid black; 
-    border-radius: 7px;   
-    margin: auto;   
+#facts article{    
     max-width: 90%;  
     max-height: 85%;  
     max-height: min-content;  
@@ -269,20 +252,9 @@ video{
     height: 100%;
 }
 
-figure{
-    margin: auto; /*centrerar bilden och gör så att den fyller toppen av skärmen*/
-
-}
-
-#facts p, #facts h2{ /*centrerar h2 och p inom #facts*/
-    text-align: center;
-}
-
 #facts .wrapper  > footer > p{ /*gör så att texten i footer är på vänster sidan eftersom jag ändrade det i koden ovan*/
     text-align: left;
 }
-
-
 
 /*-----------*/
 
@@ -301,7 +273,6 @@ figure{
 table, th ,td{ /*skapar en tabell med en border, centrerar texten, centrerar*/
     border: solid black;
     border-collapse: collapse;
-    text-align: center;
     margin: auto; /*centrerar tabellen*/
     padding: 5px; /*gör cellerna i tabellen större*/
 }
@@ -334,7 +305,6 @@ caption{ /*Ändrar texten till tabellen till tjock och 18 px*/
 
 #facts > .wrapper > main > section{ /*gör så att listornas text centreras och att list punkterna följer med texten*/
     list-style-position: inside;
-    text-align: center;
 }
 
 ul{ /*tar bort den padding som automatiskt finns på oorganiserade listor*/
@@ -354,36 +324,38 @@ dd{
     margin: 10px;
 }
 
-#facts section:nth-child(3) > section:nth-child(1), #facts section:nth-child(3) > section:nth-child(2){ /*centrerar listorna*/
-    margin: auto;
-}
-
-#facts section:nth-child(3) > section:nth-child(2){ /*Skapar en border runt ul i #facts*/
-    border: solid black;
-    border-radius: 7px;
-}
 /*------------*/
 
 /*----------------------------Nyhetsbrevet------------------------------------*/
 
 #newsletter section{ /*Skapar border, centrerar och ändrar bakgrund på section elementen inom #newsletter, gör även så att de har mellanrum mellan sig*/
-    border: solid black;
-    border-radius: 7px;
-    margin: auto;
     height: min-content;
     background-color: rgba(255, 255, 255, 0.7);
     margin-bottom: 7px;
     margin-top: 7px;
 }
 
-#newsletter section form{ /*centrerar mina forms*/
-    margin: auto;
-}
-
 input{ /*gör så att mina inputs är raddade vertikalt och mellanrum mellan dem*/
     display: block;
     margin-bottom: 10px;
 }
+/*----------*/
+
+#newsletter section form,
+#newsletter section,
+figure,
+#facts article,
+.musicContent section,
+iframe,
+#music > .wrapper > main > a,
+#index > .wrapper > main > section,
+h1,
+nav > p > a,
+nav,
+nav li{
+    margin: auto;
+}
+
 
 /*---------------------Älska Fokusera Hata-----------------------*/
 
@@ -421,17 +393,12 @@ a:active{ /*när den är aktiv blir den ljusgrå*/
 
     #index > .wrapper > main > section{ /*Centrerar och bestämmer minsta höjden på sektioner inom #index*/
         min-height: 50%;
-        margin: auto;
     }
 
     #music > .wrapper > main{ /*skapar en grid på #music sidan med 2 spalter och 3 rader*/
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-    }
-
-    #music > .wrapper > main > a{ /*Centrerar a elementen inom music inom wrapper inom main inom a*/
-        margin: auto;
     }
 
     .musicContent{ /*skapar en grid inom musicContent som är 2 spaltig och 4 rader*/
@@ -446,23 +413,17 @@ a:active{ /*när den är aktiv blir den ljusgrå*/
         grid-area: top;
     }
 
-    .musicContent > section{ /*Centrerar sectionen och bestämmer höjden*/
-        margin: auto;
+    .musicContent > section{ /*bestämmer höjden*/
         height: min-content;
     }
 
-    #newsletter section{ /*Centrerar och bestämmer bredden på sectionerna under newsletter*/
+    #newsletter section{ /*bestämmer bredden på sectionerna under newsletter*/
         width: 85%;
-        margin: auto;
     }
 
     #newsletter main{ /*skapar en grid inom newsletter som har 2 rader*/
         display: grid;
         grid-template-rows: 1fr 1fr;
-    }
-
-    #newsletter article{ /*Centrerar text inom article inom newsletter*/
-        text-align:center;
     }
 
     #newsletter section:nth-child(1){ /*skapar en grid inom första sectionen inom newsletter, så att text och forms separeras*/
@@ -472,7 +433,8 @@ a:active{ /*när den är aktiv blir den ljusgrå*/
     
     #newsletter section:nth-child(2){ /*Skapar en grid inom andra sektionen inom newsletter så att formsen och texten separeras*/
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 2fr 2fr;
+        padding: 10px;
     }
 }
 
@@ -487,35 +449,44 @@ a:active{ /*när den är aktiv blir den ljusgrå*/
     }
 
     /*------------*/
+
+    #facts > .wrapper > main > section:nth-child(1), #facts > .wrapper > main > section:nth-child(2){
+        border-bottom: solid #000000;
+        padding: 10px;
+    }
+
+    #facts > .wrapper > main > section:nth-child(2), #facts > .wrapper > main > section:nth-child(3){
+        display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+    }
+
     #facts > .wrapper > main > section:nth-child(1){ /*skapar en grid inom den första sektionen, sektionen är inom grid area "HH"*/
         grid-area: HH;
         display: grid;
             grid-template-columns: 1fr 2fr;
 
-            border-bottom: solid black; /*skapar en border på botten för att avgränsa sektionen från nedre sektion*/
-            padding: 10px; /*gör så att elementen inom sectionen inte är rakt upp mot kanten av av sectionen*/
     }
 
     #facts > .wrapper > main > section:nth-child(2){
         grid-area: HI;
-        display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
 
-        border-bottom: solid black;
-        padding: 10px;
+
     }
 
     #facts > .wrapper > main > section:nth-child(3){
-        grid-area: PI;
-        display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            padding: 10px;
+        grid-area: PI;           
+        padding: 10px;
     }
     /*---------------*/
 
     img{ /*skapar en border runt img*/
         border: solid black;
         border-radius: 7px;
+    }
+
+    #newsletter section:nth-child(2) > form{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     

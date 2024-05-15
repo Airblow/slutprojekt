@@ -74,48 +74,43 @@
                             <label for="postcode">Postnummer</label>
                             <input type="text" id="postcode" name="postnummer" required>
 
-                            <label for="extra">Bra att veta </label>
-                            <input type="textbox" id="extra" name="extra"> <!--input typ textbox-->
-
                             <input type="submit" value="Skapa">
                         </fieldset>
-                    </form>
-
-                    <form action="..." method="post">
+            
                         <fieldset>
                             <legend>Hur ofta vill du få paketet?</legend>
 
                             <label for="monthly">Månadsvis</label>
-                            <input type="radio" id="monthly" name="frequency" checked> <!--input typ radio, alltså att clicka en rund knapp, attributet checked gör att den är automatiskt checkad-->
+                            <input type="radio" id="monthly" name="frequency" value="monthly" checked> <!--input typ radio, alltså att clicka en rund knapp, attributet checked gör att den är automatiskt checkad-->
 
                             <label for="othermonth">Varannan månad</label>
-                            <input type="radio" id="othermonth" name="frequency">
+                            <input type="radio" id="othermonth" name="frequency" value="othermonth">
 
                             <label for="quarterly">Kvartal</label>
-                            <input type="radio" id="quarterly" name="frequency">
+                            <input type="radio" id="quarterly" name="frequency" value="quarterly">
                         </fieldset>
 
                         <fieldset>
                             <legend>Premiumpaket</legend>
 
                             <label for="basic">Vanligt</label>
-                            <input type="checkbox" id="basic" name="typeof" checked> <!--input checkbox gör så att inputen är en checkmark-->
+                            <input type="checkbox" id="basic" name="typeof" value="basic" checked> <!--input checkbox gör så att inputen är en checkmark-->
 
                             <label for="premium">Premium</label>
-                            <input type="checkbox" id="premium" name="typeof">
+                            <input type="checkbox" id="premium" name="typeof" value="premium">
 
                             <label for="genre">Favorit musik genre</label> 
                             <select id="genre"> <!--input select, en drop down meny med alternativ. Alternativen är "option" elementen-->
-                                <option>Pop</option>
-                                <option>Rock</option>
-                                <option>Hip Hop</option>
-                                <option>R&B</option>
-                                <option>EDM</option>
-                                <option>Country</option>
-                                <option>Jazz</option>
-                                <option>Raggae</option>
-                                <option>Latin</option>
-                                <option>Andra</option>
+                                <option value="pop">Pop</option>
+                                <option value="rock">Rock</option>
+                                <option value="hiphop">Hip Hop</option>
+                                <option value="RnB">R&B</option>
+                                <option value="edm">EDM</option>
+                                <option value="country">Country</option>
+                                <option value="jazz">Jazz</option>
+                                <option value="raggae">Raggae</option>
+                                <option value="latin">Latin</option>
+                                <option value="other">Andra</option>
                             </select>
 
                             <input type="submit" value="Spara">
